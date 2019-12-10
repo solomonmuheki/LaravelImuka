@@ -16,6 +16,8 @@ class CreateDealsTable extends Migration
         Schema::create('deals', function (Blueprint $table) {
           
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('companyName');
             $table->string('companyType');
             $table->string('companyIndustry');

@@ -24,6 +24,7 @@ class ApiController extends Controller
 
 
         $deal = new Deal();
+        $deal->user_id = $request->user_id;
         $deal->companyName = $request->companyName;
         $deal->companyType = $request->companyType;
         $deal->companyIndustry = $request->companyIndustry;
@@ -65,7 +66,7 @@ class ApiController extends Controller
   
         if (Deal::where('id', $id)->exists()) {
             $deal = Deal::find($id);
-            
+            $deal->user_id = is_null($request->user_id) ? $deal->user_id: $request->user_id;
              $deal->companyName = is_null($request->companyName) ? $deal->companyName: $request->companyName;
             $deal->companyType = is_null($request->companyType) ? $deal->companyType : $request->companyType;
             $deal->companyIndustry = is_null($request->companyIndustry) ? $deal->companyIndustry: $request->companyIndustry;
