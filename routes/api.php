@@ -18,6 +18,14 @@ Route::post('deals', 'ApiController@createDeal');
 Route::put('deal/update/{id}', 'ApiController@updateDeal');
 Route::delete('deals/delete/{id}','ApiController@deleteDeal');
 
+Route::post('offer', 'OfferController@createOffer');
+Route::get('offers', 'OfferController@showAllOffers');
+Route::get('offer/{id}', 'OfferController@getOffer');
+Route::delete('offer/delete/{id}','OfferController@deleteOffer');
+Route::put('offer/update/{id}', 'OfferController@updateOffer');
+Route::put('offer/confirm-offer/{id}', 'OfferController@confirmOffer');
+Route::put('offer/reject-offer/{id}', 'OfferController@rejectOffer');
+
 Route::group([
 
     'middleware' => 'api',

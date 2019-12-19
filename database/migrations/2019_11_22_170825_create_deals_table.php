@@ -24,6 +24,7 @@ class CreateDealsTable extends Migration
             $table->string('Address');
             $table->string('telephone');
             $table->string('email');
+            $table->integer('rating');
             $table->string('AmountToRaise');
             $table->string('image');
             $table->text('detailedDescription');
