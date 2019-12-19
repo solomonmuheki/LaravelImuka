@@ -31,6 +31,7 @@ class ApiController extends Controller
         $deal->Address = $request->Address ;
         $deal->telephone = $request->telephone;
         $deal->email= $request->email;
+        $deal->rating= $request->rating;
         $deal->AmountToRaise = $request->AmountToRaise;
         $deal->image = $imagefilename;
         $deal->detailedDescription = $request->detailedDescription;
@@ -73,6 +74,8 @@ class ApiController extends Controller
             $deal->Address = is_null($request->Address) ? $deal->Address : $request->Address;
             $deal->telephone = is_null($request->telephone) ? $deal->telephone: $request->telephone;
             $deal->email = is_null($request->email) ? $deal->email: $request->email;
+            $deal->rating = is_null($request->rating) ? $deal->rating: $request->rating;
+
             $deal->AmountToRaise= is_null($request->AmountToRaise) ? $deal->AmountToRaise: $request->AmountToRaise;
          // $deal->image = is_null($request->image) ? $deal->image : $request->image;
            // $deal->image = $imagefilename;
