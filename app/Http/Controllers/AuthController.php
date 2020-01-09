@@ -89,7 +89,8 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user_id' => auth()->user()->id,
             'user_name' => auth()->user()->name,
-            'user_role' => auth()->user()->user_role
+            'user_role' => auth()->user()->user_role,
+            'status' => auth()->user()->status
         ]);
     }
 }
