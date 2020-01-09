@@ -61,6 +61,17 @@ class ApiController extends Controller
             ], 404);
           }
       }
+      public function getUserDeals($user_id) {
+        // logic to get a deal record goes here
+        if (Deal::where('user_id', $user_id)->exists()) {
+            $deals = Deal::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($deals, 200);
+          } else {
+            return response()->json([
+              "message" => "No Deal(s) found"
+            ], 404);
+          }
+      }
   
       public function updateDeal(Request $request, $id) {
         // logic to update a deal record goes 
