@@ -17,7 +17,7 @@ class CreateDealsTable extends Migration
           
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('companyName');
             $table->string('companyType');
             $table->string('companyIndustry');
@@ -25,6 +25,7 @@ class CreateDealsTable extends Migration
             $table->string('telephone');
             $table->string('email');
             $table->integer('rating');
+            $table->integer('status');
             $table->string('AmountToRaise');
             $table->string('image');
             $table->text('detailedDescription');

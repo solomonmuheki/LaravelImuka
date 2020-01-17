@@ -1,0 +1,66 @@
+[2020-01-16 10:02:10] local.ERROR: Failed to authenticate on SMTP server with username "accessimuka@gmail.com" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+". Authenticator XOAUTH2 returned Expected response code 250 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+". {"exception":"[object] (Swift_TransportException(code: 0): Failed to authenticate on SMTP server with username \"accessimuka@gmail.com\" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code \"535\", with message \"535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+\". Authenticator PLAIN returned Expected response code 235 but got code \"535\", with message \"535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+\". Authenticator XOAUTH2 returned Expected response code 250 but got code \"535\", with message \"535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials u1sm3640917wmc.5 - gsmtp
+\". at D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\Esmtp\\AuthHandler.php:191)
+[stacktrace]
+#0 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\EsmtpTransport.php(371): Swift_Transport_Esmtp_AuthHandler->afterEhlo(Object(Swift_SmtpTransport))
+#1 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(148): Swift_Transport_EsmtpTransport->doHeloCommand()
+#2 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Mailer.php(65): Swift_Transport_AbstractSmtpTransport->start()
+#3 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(486): Swift_Mailer->send(Object(Swift_Message), Array)
+#4 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(261): Illuminate\\Mail\\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(159): Illuminate\\Mail\\Mailer->send(Object(Illuminate\\Support\\HtmlString), Array, Object(Closure))
+#6 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->Illuminate\\Mail\\{closure}()
+#7 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(160): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#8 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(277): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\Mailer))
+#9 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(231): Illuminate\\Mail\\Mailer->sendMailable(Object(App\\Mail\\ResetPasswordMail))
+#10 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\PendingMail.php(127): Illuminate\\Mail\\Mailer->send(Object(App\\Mail\\ResetPasswordMail))
+#11 D:\\tutorial websites\\imukaBackend\\imukaBackend\\app\\Http\\Controllers\\ResetPasswordController.php(31): Illuminate\\Mail\\PendingMail->send(Object(App\\Mail\\ResetPasswordMail))
+#12 D:\\tutorial websites\\imukaBackend\\imukaBackend\\app\\Http\\Controllers\\ResetPasswordController.php(24): App\\Http\\Controllers\\ResetPasswordController->send('hosobe4266@seo-...')
+#13 [internal function]: App\\Http\\Controllers\\ResetPasswordController->sendEmail(Object(Illuminate\\Http\\Request))
+#14 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#15 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('sendEmail', Array)
+#16 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ResetPasswordController), 'sendEmail')
+#17 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#18 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#19 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\barryvdh\\laravel-cors\\src\\HandleCors.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#26 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(177): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\barryvdh\\laravel-cors\\src\\HandleCors.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(152): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#47 D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(117): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#48 D:\\tutorial websites\\imukaBackend\\imukaBackend\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#49 D:\\tutorial websites\\imukaBackend\\imukaBackend\\server.php(21): require_once('D:\\\\tutorial web...')
+#50 {main}
+"} 
