@@ -17,6 +17,7 @@ Route::get('deals/{id}', 'ApiController@getDeal');
 Route::post('deals', 'ApiController@createDeal');
 Route::put('deal/update/{id}', 'ApiController@updateDeal');
 Route::delete('deal/delete/{id}','ApiController@deleteDeal');
+Route::put('deal/deal-status/{id}', 'ApiController@updateDealStatus');
 Route::get('user-deals/{user_id}', 'ApiController@getUserDeals');
 
 

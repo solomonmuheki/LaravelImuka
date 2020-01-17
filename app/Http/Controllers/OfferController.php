@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\offer;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreOfferPost;
+Use Response;
+Use Exception;
 
 class OfferController extends Controller
 {
@@ -22,24 +25,28 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createOffer(Request $request)
+    public function createOffer(StoreOfferPost $request)
     {
         //
+     
+        $offer = new offer();
+        $offer->user_id = $request->user_id;
+        $offer->deal_id = $request->deal_id;
+        $offer->offer_amount = $request->offer_amount;
+        $offer->status = $request->status;
        
+        $offer->save();
     
-            $offer = new offer();
-            $offer->user_id = $request->user_id;
-            $offer->deal_id = $request->deal_id;
-            $offer->offer_amount = $request->offer_amount;
-            $offer->status = $request->status;
-           
-            $offer->save();
-        
-            return response()->json([
-                "message" => "offer successfully  created"
-            ], 201);
-          
+        return response()->json([
+            "message" => "offer successfully  created"
+        ], 201);
+      
+      
+    
+         
     }
+
+    
 
     public function getOffer($id) {
         // logic to get a offer record goes here
@@ -72,6 +79,7 @@ class OfferController extends Controller
         if (Offer::where('id', $id)->exists()) {
             $offer = Offer::find($id);
             $offer->offer_amount  = is_null($request->offer_amount ) ? $offer->offer_amount : $request->offer_amount ;
+            $offer->status  = is_null($request->status ) ? $offer->status : $request->status;
             
            
           
@@ -103,27 +111,30 @@ class OfferController extends Controller
             ], 404);
           }
       }
+      // public function getUserOffers($user_id) {
+      //   // logic to get a user offers  goes here
+      //   if (Offer::where('user_id', $user_id)->exists()) {
+      //       $offers = Offer::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
+      //       return response($offers, 200);
+      //     } else {
+      //       return response()->json([
+      //         "message" => "No Offer(s) found"
+      //       ], 404);
+      //     }
+      // }
+      
       public function getUserOffers($user_id) {
         // logic to get a user offers  goes here
-        if (Offer::where('user_id', $user_id)->exists()) {
+        
             $offers = Offer::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
             return response($offers, 200);
-          } else {
-            return response()->json([
-              "message" => "No Offer(s) found"
-            ], 404);
-          }
       }
       public function getDealOffers($deal_id) {
         // logic to get offers on a deal  goes here
-        if (Offer::where('deal_id', $deal_id)->exists()) {
+        
             $offers = Offer::where('deal_id', $deal_id)->get()->toJson(JSON_PRETTY_PRINT);
             return response($offers, 200);
-          } else {
-            return response()->json([
-              "message" => "No Offer(s) for this deal found"
-            ], 404);
-          }
+          
       }
     public function confirmOffer(Request $request, $id) {
         // logic to confirm offer  

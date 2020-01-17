@@ -16,12 +16,13 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('deal_id')->unsigned();
-            $table->foreign('deal_id')->references('id')->on('deals');
+            $table->foreign('deal_id')->references('id')->on('deals')->onDelete('cascade')->onUpdate('cascade');
             $table->string('offer_amount');
             $table->integer('status');
             $table->timestamps();
+            $table->unique(['user_id', 'deal_id']);
         });
     }
 
