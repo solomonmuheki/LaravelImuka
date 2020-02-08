@@ -25,7 +25,7 @@ class CreateEventsTable extends Migration
             $table->string('time_of_event');
             $table->string('link');
             $table->string('verified');
-            $table->string('description');
+            $table->text('description');
             $table->string('location');
             $table->string('user_type');
             $table->text('country');
