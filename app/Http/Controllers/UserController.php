@@ -48,7 +48,7 @@ class UserController extends Controller
             ], 202);
           } else {
             return response()->json([
-              "message" => "user not found"
+              "message" => "user Agent not found"
             ], 404);
           }
       }
@@ -64,7 +64,7 @@ class UserController extends Controller
             ], 202);
           } else {
             return response()->json([
-              "message" => "user not found"
+              "message" => "This User Investor not found"
             ], 404);
           }
       }
@@ -104,6 +104,28 @@ class UserController extends Controller
             } else {
             return response()->json([
                 "message" => "user not found"
+            ], 404);
+            
+        }
+      }
+      public function updateUserProfile(Request $request, $id) {
+        // logic to update a user profile goes 
+
+        if (User::where('id', $id)->exists()) {
+            $user = User::find($id);
+             $user->phone = is_null($request->phone) ? $user->phone: $request->phone;
+            $user->gender = is_null($request->gender) ? $user->gender : $request->gender;
+            $user->country = is_null($request->country) ? $user->country: $request->country;
+            $user->interests = is_null($request->interests) ? $user->interests : $request->interests;
+            $user->dob = is_null($request->dob) ? $user->dob: $request->dob;
+            $user->save();
+    
+            return response()->json([
+                "message" => "User profile updated successfully"
+            ], 200);
+            } else {
+            return response()->json([
+                "message" => "User not found"
             ], 404);
             
         }

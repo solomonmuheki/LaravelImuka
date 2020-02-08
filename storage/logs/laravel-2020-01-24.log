@@ -1,4 +1,4 @@
-[2019-12-28 08:28:56] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+[2020-01-24 07:51:57] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `deals`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `deals`) at D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
 [stacktrace]
@@ -117,7 +117,7 @@
 #58 D:\\tutorial websites\\imukaBackend\\imukaBackend\\server.php(21): require_once('D:\\\\tutorial web...')
 #59 {main}
 "} 
-[2019-12-28 08:28:58] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+[2020-01-24 07:51:59] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `deals`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `deals`) at D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
 [stacktrace]

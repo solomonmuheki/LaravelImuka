@@ -12,6 +12,15 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('events', 'EventController@getAllEvents');
+Route::get('event/{id}', 'EventController@getEvent');
+Route::post('events', 'EventController@createEvent');
+Route::put('event/update/{id}', 'EventController@updateEvent');
+Route::delete('event/delete/{eventId}','EventController@deleteEvent');
+Route::get('event-location/{location}', 'EventController@getEventLocation');
+Route::get('event-type/{type}', 'EventController@getEventType');
+
+
 Route::get('deals', 'ApiController@getAllDeals');
 Route::get('deals/{id}', 'ApiController@getDeal');
 Route::post('deals', 'ApiController@createDeal');
@@ -37,6 +46,7 @@ Route::get('user-agent/{user_role}', 'UserController@getAgentUser');
 Route::get('user-investor/{id}', 'UserController@getInvestorUser');
 Route::delete('user-agent/delete/{id}','UserController@deleteAgentUser');
 Route::delete('user-investor/delete/{id}','UserController@deleteInvestorUser');
+Route::put('user-profile/update/{id}', 'UserController@updateUserProfile');
 Route::put('verify-user/{id}', 'UserController@verifyUser');
 Route::put('deverify-user/{id}', 'UserController@deverifyUser');
 
