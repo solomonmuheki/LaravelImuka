@@ -55,8 +55,11 @@ class EventController extends Controller
       public function getEvent($eventId) {
         // logic to get a event record goes here
         if (Event::where('id', $eventId)->exists()) {
-            $event = Event::where('id', $eventId)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($event, 200);
+          
+            $event = Event::find($eventId);
+            return response(array(
+              'event' =>$event,
+             ),200);
           } else {
             return response()->json([
               "message" => "Event not found"
