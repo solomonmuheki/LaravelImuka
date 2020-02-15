@@ -16,28 +16,29 @@ class CreateEventsTable extends Migration
       
 
         Schema::create('events', function (Blueprint $table) {
+           
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('event_type');
             $table->string('venue');
-            $table->string('added_by');
+            $table->string('added_by')->nullable();
             $table->string('image');
-            $table->string('time_of_event');
-            $table->string('link');
-            $table->string('verified');
-            $table->text('description');
+            $table->string('time_of_event')->nullable();
+            $table->string('link')->nullable();
+            $table->string('verified')->nullable();
+            $table->text('description')->nullable();
             $table->string('location');
-            $table->string('user_type');
+            $table->string('user_type')->nullable();
             $table->text('country');
             $table->string('region');
             $table->string('category');
-            $table->string('price');
-            $table->text('contact');
-            $table->text('session_objectives');
-            $table->date('date_from');
-            $table->date('date_to');
-            $table->string('time_from');
-            $table->string('time_to');
+            $table->string('price')->nullable();
+            $table->text('contact')->nullable();
+            $table->text('session_objectives')->nullable();
+            $table->date('date_from')->nullable();
+            $table->date('date_to')->nullable();
+            $table->string('time_from')->nullable();
+            $table->string('time_to')->nullable();
             $table->timestamps();
         });
     }
