@@ -21,6 +21,15 @@ Route::get('event-location/{location}', 'EventController@getEventLocation');
 Route::get('event-type/{type}', 'EventController@getEventType');
 
 
+Route::get('event-attendees/{id}', 'AttendeeController@getAllEventAttendees');
+Route::get('user-attendences/{id}', 'AttendeeController@getUserAttendances');
+Route::get('attendees', 'AttendeeController@showAllAttendees');
+Route::get('attendee/{id}', 'AttendeeController@getAttendee');
+Route::post('attendee', 'AttendeeController@createAttendee');
+Route::put('update-attendee/{id}', 'AttendeeController@updateAttendee');
+Route::delete('delete-attendee/{id}','AttendeeController@deleteAttendee');
+
+
 Route::get('deals', 'ApiController@getAllDeals');
 Route::get('deals/{id}', 'ApiController@getDeal');
 Route::post('deals', 'ApiController@createDeal');

@@ -21,14 +21,10 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->string('event_type');
             $table->string('venue');
-            $table->string('added_by')->nullable();
             $table->string('image');
-            $table->string('time_of_event')->nullable();
             $table->string('link')->nullable();
-            $table->string('verified')->nullable();
             $table->text('description')->nullable();
             $table->string('location');
-            $table->string('user_type')->nullable();
             $table->text('country');
             $table->string('region');
             $table->string('category');
