@@ -111,17 +111,7 @@ class OfferController extends Controller
             ], 404);
           }
       }
-      // public function getUserOffers($user_id) {
-      //   // logic to get a user offers  goes here
-      //   if (Offer::where('user_id', $user_id)->exists()) {
-      //       $offers = Offer::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
-      //       return response($offers, 200);
-      //     } else {
-      //       return response()->json([
-      //         "message" => "No Offer(s) found"
-      //       ], 404);
-      //     }
-      // }
+    
       
       public function getUserOffers($user_id) {
         // logic to get a user offers  goes here
