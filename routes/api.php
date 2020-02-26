@@ -59,6 +59,13 @@ Route::put('user-profile/update/{id}', 'UserController@updateUserProfile');
 Route::put('verify-user/{id}', 'UserController@verifyUser');
 Route::put('deverify-user/{id}', 'UserController@deverifyUser');
 
+Route::resource('/orders', 'OrdersController');
+Route::resource('/categories', 'CategoriesController');
+Route::resource('/types', 'TypesController');
+Route::resource('/transactions', 'TransactionsController');
+Route::resource('/tickets', 'TicketsController');
+
+
 
 Route::group([
 
