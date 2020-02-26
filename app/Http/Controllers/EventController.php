@@ -11,8 +11,11 @@ class EventController extends Controller
     //
     public function getAllEvents() {
         // logic to get all events goes here
-        $events = Event::get()->toJson(JSON_PRETTY_PRINT);
-        return response($events, 200);
+        $events = Event::all();
+        if ($events->count() > 0){
+            return Event::with('ticket')->get();
+        }
+        return [];
       }
   
       public function createEvent(Request $request) {
@@ -53,6 +56,7 @@ class EventController extends Controller
         if (Event::where('id', $eventId)->exists()) {
           
             $event = Event::find($eventId);
+            $event->ticket = Event::find($eventId)->ticket;
             return response(array(
               'event' =>$event,
              ),200);
