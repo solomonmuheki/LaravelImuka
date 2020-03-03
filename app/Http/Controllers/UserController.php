@@ -52,7 +52,17 @@ class UserController extends Controller
             ], 404);
           }
       }
-    
+      public function getUser($id) {
+        // logic to get a deal record goes here
+        if (User::where('id', $id)->exists()) {
+            $user = User::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($user, 200);
+          } else {
+            return response()->json([
+              "message" => "User not found"
+            ], 404);
+          }
+      }
       public function deleteInvestorUser ($id) {
         // logic to delete user record goes here
         if(User::where('id', $id)->exists()) {
@@ -108,11 +118,14 @@ class UserController extends Controller
             
         }
       }
+     
       public function updateUserProfile(Request $request, $id) {
         // logic to update a user profile goes 
 
-        if (User::where('id', $id)->exists()) {
-            $user = User::find($id);
+        if (user::where('id', $id)->exists()) {
+            $user = user::find($id);
+            $user->fname = is_null($request->fname) ? $user->fname: $request->fname;
+            $user->lname = is_null($request->lname) ? $user->lname : $request->lname;
              $user->phone = is_null($request->phone) ? $user->phone: $request->phone;
             $user->gender = is_null($request->gender) ? $user->gender : $request->gender;
             $user->country = is_null($request->country) ? $user->country: $request->country;

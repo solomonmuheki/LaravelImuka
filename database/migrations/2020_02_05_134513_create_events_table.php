@@ -28,7 +28,6 @@ class CreateEventsTable extends Migration
             $table->text('country');
             $table->string('region');
             $table->string('category');
-            $table->string('price')->nullable();
             $table->text('contact')->nullable();
             $table->text('session_objectives')->nullable();
             $table->date('date_from')->nullable();
