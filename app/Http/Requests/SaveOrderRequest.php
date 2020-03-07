@@ -26,7 +26,7 @@ class SaveOrderRequest extends FormRequest
         return [
             'firstName' => 'required',
             'lastName' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email', 
             'totalCost' => 'required|digits_between:1,9',
             'phoneNumber' => 'required',
             'tickets' => 'present|array',
