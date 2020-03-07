@@ -73,11 +73,8 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $ticket = Ticket::find($id);
-        $ticket->name = $request->name;
-        $ticket->description = $request->description;
         $ticket->price = $request->price;
         $ticket->save();
-
         return $ticket;
 
     }

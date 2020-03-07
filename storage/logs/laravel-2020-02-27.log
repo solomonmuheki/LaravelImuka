@@ -1,0 +1,4 @@
+[2020-02-27 10:57:26] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at D:\\tutorial websites\\imukaBackend\\imukaBackend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:25)
+[stacktrace]
+#0 {main}
+"} 

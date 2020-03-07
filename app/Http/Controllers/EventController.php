@@ -36,7 +36,7 @@ class EventController extends Controller
         $event->country = $request->country;
         $event->region= $request->region;
         $event->category= $request->category;
-        $event->price= $request->price;
+        
         $event->contact= $request->contact;
         $event->session_objectives= $request->session_objectives;
         $event->date_from= $request->date_from;
@@ -82,7 +82,6 @@ class EventController extends Controller
            $event->country= is_null($request->country) ? $event->country: $request->country;
            $event->region= is_null($request->region) ? $event->region: $request->region;
            $event->category= is_null($request->category) ? $event->category: $request->category;
-           $event->price= is_null($request->price) ? $event->price: $request->price;
            $event->contact= is_null($request->contact) ? $event->contact: $request->contact;
            $event->session_objectives= is_null($request->session_objectives) ? $event->session_objectives : $request->session_objectives;
            $event->date_from= is_null($request->date_from) ? $event->date_from: $request->date_from;
