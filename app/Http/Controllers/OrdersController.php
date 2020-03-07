@@ -6,10 +6,7 @@ use App\Http\Requests\SaveOrderRequest;
 use App\Order;
 use App\Transaction;
 use App\Ticket;
-<<<<<<< HEAD
 use YoAPI;
-=======
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
 
 class OrdersController extends Controller
 {
@@ -22,11 +19,8 @@ class OrdersController extends Controller
     {
         $orders = Order::all();
         if ($orders->count() > 0){
-<<<<<<< HEAD
             return Order::with('transaction')->with('tickets.event')->get();
-=======
             return Order::with('transaction')->with('tickets')->get();
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
         }
         return [];
     }
@@ -43,10 +37,7 @@ class OrdersController extends Controller
 
         $tickets = ($request->tickets);
 
-<<<<<<< HEAD
         // Reason for the transfer of funds
-=======
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
         $description = 'Payment for';
          // Create the message for the transaction
          foreach ($tickets as $key => $ticket) {
@@ -57,7 +48,6 @@ class OrdersController extends Controller
                 $description = $description . ', ' . $eventTitle;
         }
 
-<<<<<<< HEAD
         // // Start the Mobile Money User to Prompt for PIN to transfer funds
         // $username = 'imukaaccess'; $password = 'imuka5538';
         // $yoAPI = new YoAPI($username, $password);
@@ -85,8 +75,6 @@ class OrdersController extends Controller
 
         // return $response;
 
-=======
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
         // REQUEST MADE TO BEYONIC, MTN OR YO PAY
         // $payment = Beyonic_Payment::create([
         //     "phonenumber" => $request->phoneNumber,
@@ -133,11 +121,8 @@ class OrdersController extends Controller
         $transaction->order_id = $order->id;
         $transaction->save();
 
-<<<<<<< HEAD
         // Send email to the attendee which order ID, 
 
-=======
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
         $order->tickets = $tickets;
         $order->transaction = $transaction;
         return $order;
@@ -154,11 +139,8 @@ class OrdersController extends Controller
         $order = Order::find($id);
         if($order != null){
             $order->transaction = $order->transaction;
-<<<<<<< HEAD
             $order->tickets = $order->with('tickets.event')->get();
-=======
             $order->tickets = $order->tickets;
->>>>>>> 65057f170880112619cc6007bb1c01d552039189
             return $order;
         }else{
            return response()->json(['errorMessage' => "No order with that ID = " . $id], 404);
