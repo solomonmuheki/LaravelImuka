@@ -53,6 +53,10 @@ Route::put('offer/reject-offer/{id}', 'OfferController@rejectOffer');
 Route::get('users', 'UserController@showAllUsers');
 Route::get('user-agent/{user_role}', 'UserController@getAgentUser');
 Route::get('user-investor/{id}', 'UserController@getInvestorUser');
+<<<<<<< HEAD
+=======
+Route::get('user/{id}', 'UserController@getUser');
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189
 Route::delete('user-agent/delete/{id}','UserController@deleteAgentUser');
 Route::delete('user-investor/delete/{id}','UserController@deleteInvestorUser');
 Route::put('user-profile/update/{id}', 'UserController@updateUserProfile');

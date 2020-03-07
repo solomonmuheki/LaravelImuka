@@ -78,6 +78,8 @@ class TicketsController extends Controller
         $ticket->price = $request->price;
         $ticket->save();
 
+        $ticket->price = $request->price;
+        $ticket->save();
         return $ticket;
 
     }
