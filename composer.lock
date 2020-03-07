@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "09c7483233a38905f145cc1aa25d699d",
+=======
     "content-hash": "4e5751e8398fcf02a65d44e161fa149e",
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -63,12 +67,20 @@
             "version": "v0.11.4",
             "source": {
                 "type": "git",
+<<<<<<< HEAD
+                "url": "https://github.com/fruitcake/laravel-cors.git",
+=======
                 "url": "https://github.com/barryvdh/laravel-cors.git",
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189
                 "reference": "03492f1a3bc74a05de23f93b94ac7cc5c173eec9"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/fruitcake/laravel-cors/zipball/03492f1a3bc74a05de23f93b94ac7cc5c173eec9",
+=======
                 "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/03492f1a3bc74a05de23f93b94ac7cc5c173eec9",
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189
                 "reference": "03492f1a3bc74a05de23f93b94ac7cc5c173eec9",
                 "shasum": ""
             },
@@ -3610,6 +3622,55 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+<<<<<<< HEAD
+        },
+        {
+            "name": "yo-uganda/yopaymentsphp",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/YO-Uganda/YoPaymentsPHP.git",
+                "reference": "77d25047d3b069c50658fc572172217c65e74a05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/YO-Uganda/YoPaymentsPHP/zipball/77d25047d3b069c50658fc572172217c65e74a05",
+                "reference": "77d25047d3b069c50658fc572172217c65e74a05",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "YoAPI.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aziz Kirumira",
+                    "email": "akirumira@yo.co.ug"
+                },
+                {
+                    "name": "Gerald Begumisa",
+                    "email": "gbegumisa@yo.co.ug"
+                }
+            ],
+            "description": "A PHP Library to interact with the Yo! Payments API.",
+            "keywords": [
+                "YoPayments",
+                "composer",
+                "mobile money",
+                "package"
+            ],
+            "time": "2017-08-25T12:51:25+00:00"
+=======
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189
         }
     ],
     "packages-dev": [

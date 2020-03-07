@@ -471,6 +471,8 @@
 #37 E:\\PHP\\LaravelImuka\\server.php(21): require_once('E:\\\\PHP\\\\LaravelI...')
 #38 {main}
 "} 
+<<<<<<< HEAD
+=======
 [2020-02-26 15:33:32] local.ERROR: Trying to get property 'event' of non-object {"exception":"[object] (ErrorException(code: 0): Trying to get property 'event' of non-object at D:\\tutorial websites\\imukaBackend\\imukaBackend\\app\\Http\\Controllers\\OrdersController.php:41)
 [stacktrace]
 #0 D:\\tutorial websites\\imukaBackend\\imukaBackend\\app\\Http\\Controllers\\OrdersController.php(41): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'D:\\\\tutorial web...', 41, Array)
@@ -513,3 +515,4 @@
 #37 D:\\tutorial websites\\imukaBackend\\imukaBackend\\server.php(21): require_once('D:\\\\tutorial web...')
 #38 {main}
 "} 
+>>>>>>> 65057f170880112619cc6007bb1c01d552039189

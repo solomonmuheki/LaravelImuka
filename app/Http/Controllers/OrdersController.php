@@ -6,6 +6,7 @@ use App\Http\Requests\SaveOrderRequest;
 use App\Order;
 use App\Transaction;
 use App\Ticket;
+use YoAPI;
 
 class OrdersController extends Controller
 {
@@ -18,6 +19,7 @@ class OrdersController extends Controller
     {
         $orders = Order::all();
         if ($orders->count() > 0){
+            return Order::with('transaction')->with('tickets.event')->get();
             return Order::with('transaction')->with('tickets')->get();
         }
         return [];
@@ -35,6 +37,7 @@ class OrdersController extends Controller
 
         $tickets = ($request->tickets);
 
+        // Reason for the transfer of funds
         $description = 'Payment for';
          // Create the message for the transaction
          foreach ($tickets as $key => $ticket) {
@@ -44,6 +47,33 @@ class OrdersController extends Controller
             else
                 $description = $description . ', ' . $eventTitle;
         }
+
+        // // Start the Mobile Money User to Prompt for PIN to transfer funds
+        // $username = 'imukaaccess'; $password = 'imuka5538';
+        // $yoAPI = new YoAPI($username, $password);
+        // $yoAPI->set_nonblocking("TRUE");
+        // $response = $yoAPI->ac_deposit_funds($request->phoneNumber, $request->totalCost, $description);
+
+        // // print_r($response);
+        // var_dump($response);
+
+        // // For success payment
+        // if($response['Status']=='OK'){
+        //     // Transaction was successful and funds were deposited onto your account
+        //     echo "Transaction Reference = ".$response['TransactionReference'];
+        // }
+
+        // if(isset($_POST)){
+        //     $response = $yoAPI->receive_payment_notification();
+        //     if($response['is_verified']){
+        //         // Notification is from Yo! Uganda Limited
+        //         echo "Payment from ".$response['msisdn']." on ".$response['date_time']." for ".$response['narrative']." with an amount of ".$response['amount'].". Mobile Network Reference = ".$response['network_ref']." and external reference of ".$response['external_ref'];
+        //     }
+        // }
+
+        // var_dump($response);
+
+        // return $response;
 
         // REQUEST MADE TO BEYONIC, MTN OR YO PAY
         // $payment = Beyonic_Payment::create([
@@ -91,6 +121,8 @@ class OrdersController extends Controller
         $transaction->order_id = $order->id;
         $transaction->save();
 
+        // Send email to the attendee which order ID, 
+
         $order->tickets = $tickets;
         $order->transaction = $transaction;
         return $order;
@@ -107,6 +139,7 @@ class OrdersController extends Controller
         $order = Order::find($id);
         if($order != null){
             $order->transaction = $order->transaction;
+            $order->tickets = $order->with('tickets.event')->get();
             $order->tickets = $order->tickets;
             return $order;
         }else{
